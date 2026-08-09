@@ -1,0 +1,28 @@
+# 長源廣告官網 robots.txt
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OpenAI
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cache/
+Disallow: /test/
+Disallow: /draft/
+
+Sitemap: https://signage.com.tw/sitemap.xml
