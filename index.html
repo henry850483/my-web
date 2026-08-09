@@ -125,11 +125,9 @@
 
 .hero-visual{
   position:relative; aspect-ratio:4/3.3; border-radius:16px; overflow:hidden;
-  background:linear-gradient(150deg,#eef4fb 0%,#f9fbfd 60%,#ffffff 100%);
   border:1px solid var(--line); box-shadow:0 30px 60px -30px rgba(15,60,110,0.25);
-  display:flex; align-items:center; justify-content:center;
 }
-.hero-visual svg{width:92%; height:92%;}
+.hero-visual img{width:100%; height:100%; object-fit:cover; display:block;}
 
 .hero-strip{margin-top:52px; position:relative; z-index:2; perspective:1400px;}
 .strip-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:14px;}
@@ -273,47 +271,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="heroglow" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="6" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <line x1="30" y1="30" x2="450" y2="30" stroke="#c7dcef" stroke-width="1"/>
-        <line x1="30" y1="20" x2="30" y2="40" stroke="#c7dcef" stroke-width="1"/>
-        <line x1="450" y1="20" x2="450" y2="40" stroke="#c7dcef" stroke-width="1"/>
-        <text x="240" y="18" text-anchor="middle" font-family="Poppins,sans-serif" font-size="10" fill="#7e93ab" letter-spacing="1">LASER CUT / 1200mm</text>
-        <rect x="60" y="60" width="360" height="280" rx="10" fill="#ffffff" stroke="#d5e2ed" stroke-width="1"/>
-        <rect x="60" y="60" width="360" height="280" rx="10" fill="url(#panelgrad)" opacity="0.5"/>
-        <linearGradient id="panelgrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#eaf3fb"/>
-          <stop offset="1" stop-color="#ffffff"/>
-        </linearGradient>
-        <g stroke="#dbe7f2" stroke-width="1">
-          <line x1="60" y1="120" x2="420" y2="120"/>
-          <line x1="60" y1="180" x2="420" y2="180"/>
-          <line x1="60" y1="240" x2="420" y2="240"/>
-          <line x1="60" y1="300" x2="420" y2="300"/>
-          <line x1="130" y1="60" x2="130" y2="340"/>
-          <line x1="200" y1="60" x2="200" y2="340"/>
-          <line x1="280" y1="60" x2="280" y2="340"/>
-          <line x1="350" y1="60" x2="350" y2="340"/>
-        </g>
-        <g filter="url(#heroglow)">
-          <path d="M 165 155 L 165 245 M 165 200 L 210 200 M 165 155 L 205 155"
-                stroke="#2f6fa8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M 255 155 C 238 155 228 167 228 182 C 228 197 238 200 255 200 C 238 200 228 203 228 218 C 228 233 238 245 255 245"
-                stroke="#f2a93b" stroke-width="12" stroke-linecap="round" fill="none"/>
-          <path d="M 300 245 L 300 155 L 335 245 L 335 155"
-                stroke="#2f6fa8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </g>
-        <circle cx="60" cy="60" r="3" fill="#2f6fa8"/>
-        <circle cx="420" cy="60" r="3" fill="#2f6fa8"/>
-        <circle cx="60" cy="340" r="3" fill="#2f6fa8"/>
-        <circle cx="420" cy="340" r="3" fill="#2f6fa8"/>
-        <text x="80" y="370" font-family="Poppins,sans-serif" font-size="10" fill="#9aabbe" letter-spacing="0.5">MATERIAL: STAINLESS STEEL / SCALE 1:20</text>
-      </svg>
+      <img src="assets/img/hero-strip/hero-factory.png" alt="長源廣告 科技工廠">
     </div>
   </div>
 
