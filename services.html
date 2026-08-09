@@ -29,6 +29,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+.filter-row{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;}
+.filter-btn{
+  padding:9px 18px; border-radius:999px; border:1.5px solid var(--line); font-size:13.5px; font-weight:600; color:var(--ink-body);
+  background:#fff; cursor:pointer; font-family:inherit;
+}
+.filter-btn.active, .filter-btn:hover{border-color:var(--sky); color:var(--sky-deep); background:var(--sky-pale);}
+.case-item{display:none;}
+.case-item.show{display:block;}
+.result-count{font-size:13.5px; color:var(--muted); margin-bottom:24px;}
+</style>
 
 
 <!-- ============================================
@@ -184,21 +195,50 @@
 
 <section>
   <div class="wrap">
-    <div class="grid-3">
-      <div class="card">
-        <h3 style="margin-bottom:10px;"><a href="services/chain-food.html" style="color:var(--navy);">連鎖餐飲招牌</a></h3>
-        <p style="margin-bottom:16px;">標準化招牌規範，加快展店速度、降低溝通成本。</p>
-        <a href="services/chain-food.html" class="btn btn-outline btn-sm">查看詳情</a>
+    <div class="filter-row" id="filterRow">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="food" id="cat-food">連鎖餐飲招牌</button>
+      <button class="filter-btn" data-filter="clinic" id="cat-clinic">連鎖醫美招牌</button>
+      <button class="filter-btn" data-filter="office" id="cat-office">商務中心招牌</button>
+      <button class="filter-btn" data-filter="building" id="cat-building">建案招牌</button>
+      <button class="filter-btn" data-filter="phone" id="cat-phone">連鎖手機招牌</button>
+    </div>
+    <p class="result-count" id="resultCount" data-unit="個產業別">共 5 個產業別</p>
+    <div class="grid-3" id="caseGrid">
+      <div class="case-item show" data-cat="food">
+        <div class="card">
+          <h3 style="margin-bottom:10px;"><a href="services/chain-food.html" style="color:var(--navy);">連鎖餐飲招牌</a></h3>
+          <p style="margin-bottom:16px;">標準化招牌規範，加快展店速度、降低溝通成本。</p>
+          <a href="services/chain-food.html" class="btn btn-outline btn-sm">查看詳情</a>
+        </div>
       </div>
-      <div class="card">
-        <h3 style="margin-bottom:10px;"><a href="services/chain-clinic.html" style="color:var(--navy);">連鎖醫美招牌</a></h3>
-        <p style="margin-bottom:16px;">專業信賴感與法規合規並重，跨分店一致識別。</p>
-        <a href="services/chain-clinic.html" class="btn btn-outline btn-sm">查看詳情</a>
+      <div class="case-item show" data-cat="clinic">
+        <div class="card">
+          <h3 style="margin-bottom:10px;"><a href="services/chain-clinic.html" style="color:var(--navy);">連鎖醫美招牌</a></h3>
+          <p style="margin-bottom:16px;">專業信賴感與法規合規並重，跨分店一致識別。</p>
+          <a href="services/chain-clinic.html" class="btn btn-outline btn-sm">查看詳情</a>
+        </div>
       </div>
-      <div class="card">
-        <h3 style="margin-bottom:10px;"><a href="services/office-center.html" style="color:var(--navy);">商務中心招牌</a></h3>
-        <p style="margin-bottom:16px;">樓層指標系統與公司招牌牆，統一企業識別規劃。</p>
-        <a href="services/office-center.html" class="btn btn-outline btn-sm">查看詳情</a>
+      <div class="case-item show" data-cat="office">
+        <div class="card">
+          <h3 style="margin-bottom:10px;"><a href="services/office-center.html" style="color:var(--navy);">商務中心招牌</a></h3>
+          <p style="margin-bottom:16px;">樓層指標系統與公司招牌牆，統一企業識別規劃。</p>
+          <a href="services/office-center.html" class="btn btn-outline btn-sm">查看詳情</a>
+        </div>
+      </div>
+      <div class="case-item show" data-cat="building">
+        <div class="card">
+          <h3 style="margin-bottom:10px;"><a href="services/building-project.html" style="color:var(--navy);">建案招牌</a></h3>
+          <p style="margin-bottom:16px;">遠距離識別度與夜間發光效果，兼顧結構安全與外牆美感。</p>
+          <a href="services/building-project.html" class="btn btn-outline btn-sm">查看詳情</a>
+        </div>
+      </div>
+      <div class="case-item show" data-cat="phone">
+        <div class="card">
+          <h3 style="margin-bottom:10px;"><a href="services/chain-phone.html" style="color:var(--navy);">連鎖手機招牌</a></h3>
+          <p style="margin-bottom:16px;">標準化招牌規範，展店快速套用，門市好找、好記。</p>
+          <a href="services/chain-phone.html" class="btn btn-outline btn-sm">查看詳情</a>
+        </div>
       </div>
     </div>
   </div>

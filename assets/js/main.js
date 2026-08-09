@@ -93,7 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
         item.style.display = match ? '' : 'none';
         if (match) count++;
       });
-      if (resultCount) resultCount.textContent = '共 ' + count + ' 張作品';
+      if (resultCount) {
+        var unit = resultCount.getAttribute('data-unit') || '張作品';
+        resultCount.textContent = '共 ' + count + ' ' + unit;
+      }
       filterBtns.forEach(function (b) {
         b.classList.toggle('active', b.getAttribute('data-filter') === filter);
       });
