@@ -76,4 +76,49 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.key === 'Escape') closeLightbox();
     });
   }
+
+  // 服務項目篩選按鈕（含從導覽下拉選單 #cat-xxx 連結過來的自動篩選/定位）
+  var filterRow = document.getElementById('filterRow');
+  var caseGrid = document.getElementById('caseGrid');
+  var resultCount = document.getElementById('resultCount');
+  if (filterRow && caseGrid) {
+    var filterBtns = filterRow.querySelectorAll('.filter-btn');
+    var caseItems = caseGrid.querySelectorAll('.case-item');
+
+    function applyFilter(filter) {
+      var count = 0;
+      caseItems.forEach(function (item) {
+        var match = filter === 'all' || item.getAttribute('data-cat') === filter;
+        item.classList.toggle('show', match);
+        item.style.display = match ? '' : 'none';
+        if (match) count++;
+      });
+      if (resultCount) resultCount.textContent = '共 ' + count + ' 張作品';
+      filterBtns.forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-filter') === filter);
+      });
+    }
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        applyFilter(btn.getAttribute('data-filter'));
+        history.replaceState(null, '', '#' + btn.id);
+      });
+    });
+
+    function filterFromHash() {
+      var hash = window.location.hash.replace('#', '');
+      var target = document.getElementById(hash);
+      if (target && target.classList.contains('filter-btn')) {
+        applyFilter(target.getAttribute('data-filter'));
+        setTimeout(function () {
+          var y = target.getBoundingClientRect().top + window.pageYOffset - 100;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 50);
+      }
+    }
+    filterFromHash();
+    window.addEventListener('hashchange', filterFromHash);
+  }
 });
