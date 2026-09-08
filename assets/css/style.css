@@ -328,6 +328,8 @@ img{ -webkit-user-drag:none; user-drag:none; -webkit-user-select:none; user-sele
 }
 .reel-item .brand{font-size:15px; font-weight:700; color:#fff;}
 .reel-item .loc{font-size:12.5px; color:var(--gold-light); font-family:'Poppins',sans-serif; letter-spacing:0.03em;}
+.reel-link{text-decoration:none; cursor:pointer; transition:background .2s, border-color .2s;}
+.reel-link:hover{background:rgba(255,255,255,0.14); border-color:rgba(255,255,255,0.3);}
 @keyframes reel-scroll{
   from{transform:translateX(0);}
   to{transform:translateX(-50%);}
@@ -335,4 +337,21 @@ img{ -webkit-user-drag:none; user-drag:none; -webkit-user-select:none; user-sele
 @media (max-width:768px){
   .chain-reel{padding:48px 0 42px;}
   .reel-item{padding:14px 20px; min-width:140px;}
+}
+
+/* ---------- 連鎖品牌方案 ---------- */
+.chain-plan{padding:72px 0; background:#fff;}
+.chain-plan-inner{display:grid; grid-template-columns:1.3fr 0.7fr; gap:48px; align-items:center;}
+.chain-plan-text h2{font-size:27px; color:var(--navy); margin:10px 0 16px; line-height:1.5;}
+.chain-plan-text > p{color:var(--ink-body); font-size:15px; max-width:480px; margin-bottom:20px;}
+.chain-plan-list{list-style:none; margin-bottom:28px;}
+.chain-plan-list li{position:relative; padding-left:24px; margin-bottom:10px; font-size:14.5px; color:var(--ink-body);}
+.chain-plan-list li::before{content:"✓"; position:absolute; left:0; color:var(--sky-deep); font-weight:700;}
+.chain-plan-visual{display:flex; flex-direction:column; gap:18px;}
+.chain-plan-stat{background:var(--sky-pale); border:1px solid var(--line); border-radius:14px; padding:26px 22px;}
+.chain-plan-stat b{display:block; font-family:'Poppins',sans-serif; font-size:32px; color:var(--sky-deep); font-weight:800;}
+.chain-plan-stat span{font-size:13px; color:var(--muted);}
+@media (max-width:900px){
+  .chain-plan-inner{grid-template-columns:1fr;}
+  .chain-plan-visual{flex-direction:row;}
 }
