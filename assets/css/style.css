@@ -312,3 +312,27 @@ footer{padding:64px 0 30px; background:var(--surface); border-top:1px solid var(
 
 /* ---------- 內容保護 ---------- */
 img{ -webkit-user-drag:none; user-drag:none; -webkit-user-select:none; user-select:none; }
+
+/* ---------- 連鎖拓點跑馬燈 ---------- */
+.chain-reel{padding:64px 0 56px; background:var(--navy); overflow:hidden;}
+.chain-reel-head{text-align:center; margin-bottom:36px;}
+.chain-reel .eyebrow{color:var(--gold-light); justify-content:center;}
+.chain-reel h2{color:#fff; font-size:26px;}
+.chain-reel-note{color:#8fa2bd; font-size:12.5px; margin-top:10px;}
+.reel-track-wrap{width:100%; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);}
+.reel-track{display:flex; gap:16px; width:max-content; animation:reel-scroll 32s linear infinite;}
+.reel-track:hover{animation-play-state:paused;}
+.reel-item{
+  flex:0 0 auto; display:flex; flex-direction:column; gap:4px; padding:18px 26px; border-radius:12px;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); min-width:170px;
+}
+.reel-item .brand{font-size:15px; font-weight:700; color:#fff;}
+.reel-item .loc{font-size:12.5px; color:var(--gold-light); font-family:'Poppins',sans-serif; letter-spacing:0.03em;}
+@keyframes reel-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@media (max-width:768px){
+  .chain-reel{padding:48px 0 42px;}
+  .reel-item{padding:14px 20px; min-width:140px;}
+}
