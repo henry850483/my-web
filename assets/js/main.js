@@ -46,23 +46,57 @@ document.addEventListener('DOMContentLoaded', function () {
   setupHoverMenu('.nav-item', 'show-dropdown', 350);
   setupHoverMenu('.dropdown-item.has-children', 'show-flyout', 350);
 
-  // 照片點擊放大燈箱
+  // 照片點擊放大燈箱（支援 data-gallery 相簿瀏覽，可上一張／下一張）
   var lightboxImgs = document.querySelectorAll('.photo-visual-img img, .lightbox-trigger');
   if (lightboxImgs.length) {
     var overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
-    overlay.innerHTML = '<button class="lightbox-close" aria-label="關閉">&times;</button><img class="lightbox-img" src="" alt="">';
+    overlay.innerHTML = '<button class="lightbox-close" aria-label="關閉">&times;</button>' +
+      '<button class="lightbox-nav lightbox-prev" aria-label="上一張">&lsaquo;</button>' +
+      '<img class="lightbox-img" src="" alt="">' +
+      '<button class="lightbox-nav lightbox-next" aria-label="下一張">&rsaquo;</button>' +
+      '<div class="lightbox-count"></div>';
     document.body.appendChild(overlay);
     var lightboxImg = overlay.querySelector('.lightbox-img');
+    var prevBtn = overlay.querySelector('.lightbox-prev');
+    var nextBtn = overlay.querySelector('.lightbox-next');
+    var countEl = overlay.querySelector('.lightbox-count');
+
+    var currentGallery = null;
+    var currentIndex = 0;
+
+    function showAt(index) {
+      if (!currentGallery || !currentGallery.length) return;
+      currentIndex = (index + currentGallery.length) % currentGallery.length;
+      var item = currentGallery[currentIndex];
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.alt || '';
+      var multi = currentGallery.length > 1;
+      prevBtn.style.display = multi ? '' : 'none';
+      nextBtn.style.display = multi ? '' : 'none';
+      countEl.style.display = multi ? '' : 'none';
+      if (multi) countEl.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+    }
 
     lightboxImgs.forEach(function (img) {
       img.addEventListener('click', function () {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+        var groupName = img.getAttribute('data-gallery');
+        if (groupName) {
+          currentGallery = Array.prototype.slice.call(
+            document.querySelectorAll('img[data-gallery="' + groupName + '"]')
+          );
+        } else {
+          currentGallery = [img];
+        }
+        var idx = currentGallery.indexOf(img);
+        showAt(idx < 0 ? 0 : idx);
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
     });
+
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); showAt(currentIndex - 1); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); showAt(currentIndex + 1); });
 
     function closeLightbox() {
       overlay.classList.remove('open');
@@ -73,7 +107,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.target === overlay) closeLightbox();
     });
     document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('open')) return;
       if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showAt(currentIndex - 1);
+      if (e.key === 'ArrowRight') showAt(currentIndex + 1);
     });
   }
 

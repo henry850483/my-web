@@ -56,13 +56,6 @@
   text-align:center; padding:70px 24px; border:1.5px dashed var(--line); border-radius:14px;
   color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:10px;
 }
-.more-photos-toggle{
-  margin-top:8px; background:none; border:none; padding:0; font-size:12.5px; color:var(--sky-deep);
-  font-weight:600; cursor:pointer; font-family:inherit;
-}
-.more-photos-toggle:hover{text-decoration:underline;}
-.more-photos{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:10px;}
-.more-photos img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; cursor:zoom-in; display:block;}
 </style>
 <!-- ============================================
   Analytics 安裝插槽（目前為停用狀態，取得 ID 後取消註解並替換）
@@ -177,31 +170,16 @@
       <div class="photo-card"><div class="photo-visual-img"><img src="../assets/img/portfolio/extra/jubao_groove.jpg" loading="lazy" alt="長源廣告 - 2.焗飽新竹東大店-企口板招牌 作品實績" class="lightbox-trigger"></div><div class="photo-body"><p class="photo-caption">2.焗飽新竹東大店-企口板招牌</p></div></div>
       <div class="photo-card"><div class="photo-visual-img"><img src="../assets/img/portfolio/extra/wusongdian.jpg" loading="lazy" alt="長源廣告 - 3.武松殿-景安店 作品實績" class="lightbox-trigger"></div><div class="photo-body"><p class="photo-caption">3.武松殿-景安店</p></div></div>
       <div class="photo-card">
-        <div class="photo-visual-img"><img src="../assets/img/chain/jsp-luodong/01-storefront.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 店面招牌 作品實績" class="lightbox-trigger"></div>
-        <div class="photo-body">
-          <p class="photo-caption">4.呷尚寶-羅東店</p>
-          <button type="button" class="more-photos-toggle" data-target="jsp-more">查看更多照片（3）</button>
-          <div class="more-photos" id="jsp-more" hidden>
-            <img src="../assets/img/chain/jsp-luodong/02-interior.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 店內裝潢 作品實績" class="lightbox-trigger">
-            <img src="../assets/img/chain/jsp-luodong/03-counter.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 櫃檯 作品實績" class="lightbox-trigger">
-            <img src="../assets/img/chain/jsp-luodong/04-seating.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 用餐區 作品實績" class="lightbox-trigger">
-          </div>
-        </div>
+        <div class="photo-visual-img"><img src="../assets/img/chain/jsp-luodong/01-storefront.jpg" loading="lazy" alt="呷尚寶-羅東店 店面招牌" class="lightbox-trigger" data-gallery="jsp-luodong"></div>
+        <div class="photo-body"><p class="photo-caption">4.呷尚寶-羅東店</p></div>
+        <img src="../assets/img/chain/jsp-luodong/02-interior.jpg" alt="呷尚寶-羅東店 店內裝潢" data-gallery="jsp-luodong" style="display:none;">
+        <img src="../assets/img/chain/jsp-luodong/03-counter.jpg" alt="呷尚寶-羅東店 櫃檯" data-gallery="jsp-luodong" style="display:none;">
+        <img src="../assets/img/chain/jsp-luodong/04-seating.jpg" alt="呷尚寶-羅東店 用餐區" data-gallery="jsp-luodong" style="display:none;">
       </div>
     </div>
   </div>
 </section>
-<script>
-document.querySelectorAll('.more-photos-toggle').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    var panel = document.getElementById(btn.getAttribute('data-target'));
-    var open = !panel.hidden;
-    panel.hidden = open;
-    btn.textContent = open ? btn.textContent.replace('收起照片', '查看更多照片') : btn.textContent;
-    btn.textContent = open ? '查看更多照片（3）' : '收起照片';
-  });
-});
-</script>
+
 
 <section class="bg-surface">
   <div class="wrap">
