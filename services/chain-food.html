@@ -56,6 +56,11 @@
   text-align:center; padding:70px 24px; border:1.5px dashed var(--line); border-radius:14px;
   color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:10px;
 }
+.photo-mosaic{
+  aspect-ratio:4/3; overflow:hidden; border-radius:10px;
+  display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:3px;
+}
+.photo-mosaic img{width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in;}
 </style>
 <!-- ============================================
   Analytics 安裝插槽（目前為停用狀態，取得 ID 後取消註解並替換）
@@ -169,6 +174,15 @@
       <div class="photo-card"><div class="photo-visual-img"><img src="../assets/img/portfolio/extra/jubao_qna.jpg" loading="lazy" alt="長源廣告 - 焗飽-千那論招牌 作品實績" class="lightbox-trigger"></div><div class="photo-body"><p class="photo-caption">1.焗飽-千那論招牌</p></div></div>
       <div class="photo-card"><div class="photo-visual-img"><img src="../assets/img/portfolio/extra/jubao_groove.jpg" loading="lazy" alt="長源廣告 - 2.焗飽新竹東大店-企口板招牌 作品實績" class="lightbox-trigger"></div><div class="photo-body"><p class="photo-caption">2.焗飽新竹東大店-企口板招牌</p></div></div>
       <div class="photo-card"><div class="photo-visual-img"><img src="../assets/img/portfolio/extra/wusongdian.jpg" loading="lazy" alt="長源廣告 - 3.武松殿-景安店 作品實績" class="lightbox-trigger"></div><div class="photo-body"><p class="photo-caption">3.武松殿-景安店</p></div></div>
+      <div class="photo-card">
+        <div class="photo-mosaic">
+          <img src="../assets/img/chain/jsp-luodong/01-storefront.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 店面招牌 作品實績" class="lightbox-trigger">
+          <img src="../assets/img/chain/jsp-luodong/02-interior.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 店內裝潢 作品實績" class="lightbox-trigger">
+          <img src="../assets/img/chain/jsp-luodong/03-counter.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 櫃檯 作品實績" class="lightbox-trigger">
+          <img src="../assets/img/chain/jsp-luodong/04-seating.jpg" loading="lazy" alt="長源廣告 - 呷尚寶-羅東店 用餐區 作品實績" class="lightbox-trigger">
+        </div>
+        <div class="photo-body"><p class="photo-caption">4.呷尚寶-羅東店</p></div>
+      </div>
     </div>
   </div>
 </section>
