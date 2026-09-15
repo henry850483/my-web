@@ -324,4 +324,28 @@
     <loc>https://signage.com.tw/blog/sign-crane-safety.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://signage.com.tw/blog/tucheng-sign-recommendation.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://signage.com.tw/blog/new-taipei-sign-guide.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://signage.com.tw/blog/taipei-sign-recommendation.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://signage.com.tw/blog/chain-sign-vendor-recommendation.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://signage.com.tw/blog/sign-vendor-selection-tips.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://signage.com.tw/blog/sign-price-market-comparison.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
