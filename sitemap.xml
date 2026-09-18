@@ -348,4 +348,8 @@
     <loc>https://signage.com.tw/blog/sign-price-market-comparison.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://signage.com.tw/blog/clinic-interior-wayfinding-guide.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
