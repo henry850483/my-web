@@ -384,4 +384,8 @@
     <loc>https://signage.com.tw/blog/xinzhuang-sign-recommendation.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://signage.com.tw/blog/shulin-sign-recommendation.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
