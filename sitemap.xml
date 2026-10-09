@@ -396,4 +396,8 @@
     <loc>https://signage.com.tw/blog/sign-cleaning-maintenance-guide.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://signage.com.tw/blog/sign-lead-time-guide.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
